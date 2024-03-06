@@ -7,7 +7,7 @@
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:array="http://www.w3.org/2005/xpath-functions/array"
                 xmlns:tgerentals="tgerentals">
-   <!-- <xsl:import-schema namespace="tge" schema-location="tgerentals.xsd"/> -->
+   <xsl:import-schema namespace="tge" schema-location="tgerentals.xsd"/>
    <xsl:output method="html"
                doctype-system="about:legacy-compat"
                encoding="UTF-8"
@@ -38,7 +38,6 @@
                      <th>Due Charges</th>
                   </tr>
                   
-                  <!-- <xsl:variable name="totalDue" as="array(*)" select="[]"/> -->
                   <xsl:for-each select="current-group()">
                      <xsl:variable name="currentCustID" as="text()" select="Customer/text()"/>
                      <xsl:variable name="currentCustToolID" as="text()" select="Tool/text()"/>
@@ -66,10 +65,6 @@
                      
                      
                   </xsl:for-each>
-                  <!-- <tr>
-                     <td></td><td></td><td></td><td></td>
-                     <td>Total Due</td><td><span id="dollarSign">$ </span>0.00</td>
-                  </tr> -->
                </table>
                
             </xsl:for-each-group>
